@@ -1,38 +1,113 @@
-.App {
-  text-align: center;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+    background-image: linear-gradient(#1A2223, #000);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* FIRST TEXT ANIMATION */
+h1 {
+    position: relative;
+    font-size: 5em;
+    color: #222;
+    margin-bottom: 2rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+h1::before {
+    content: attr(data-text1);
+    position: absolute;
+    color: #00FFFF;
+    width: 350px;
+    overflow: hidden;
+    white-space: nowrap;
+    border-left: 3px #00FFFF;
+    animation: animate1 8s linear infinite;
+    filter: drop-shadow(0 0 20px #00FFFF)
+            drop-shadow(0 0 50px #00FFFF);
 }
 
-.App-link {
-  color: #61dafb;
+@keyframes animate1 {
+    0%, 10%, 100% 
+    {
+        width: 0;
+    }
+    70%, 90% 
+    {
+        width: 100%;
+    }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+/* SECOND TEXT ANIMATION */
+h2 {
+    position: relative;
+    font-size: 4em;
+    color: #222;
+    margin-bottom: 2rem;
 }
+
+h2::before {
+    content: attr(data-text);
+    position: absolute;
+    color: #12FF46;
+    width: 350px;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px dotted #12FF46;
+    animation: animate 8s linear infinite;
+    filter: drop-shadow(0 0 20px #12FF46)
+            drop-shadow(0 0 50px #12FF46);
+}
+
+@keyframes animate {
+    0%, 10%, 100% 
+    {
+        width: 0;
+    }
+    70%, 90% 
+    {
+        width: 77%;
+    }
+}
+
+
+/* THIRD TEXT ANIMATION */
+h3 {
+    position: relative;
+    font-size: 3em;
+    color: #222;
+}
+
+h3::before {
+    content: attr(data-text);
+    position: absolute;
+    color: #DC143C;
+    width: 350px;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 5px solid #DC143C;
+    animation: animate 8s linear infinite;
+    filter: drop-shadow(0 0 20px #DC143C)
+            drop-shadow(0 0 50px #DC143C);
+}
+
+@keyframes animate {
+    0%, 10%, 100% 
+    {
+        width: 0;
+    }
+    70%, 90% 
+    {
+        width: 80%;
+    }
+}
+
+
